@@ -1,2 +1,2 @@
-# webiste
+# website
 Website of material-theme
