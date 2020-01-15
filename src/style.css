@@ -1,0 +1,329 @@
+@import url(https://unpkg.com/@native-elements/ne-button/dist/ne-button.css);
+html {
+    background-color: #11131c;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
+        Ubuntu, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol';
+}
+body {
+    margin: 0;
+    color: #fff;
+}
+::-moz-selection {
+    background: #d480aa;
+    color: #fff;
+}
+::selection {
+    background: #d480aa;
+    color: #fff;
+}
+a::-moz-selection {
+    background: #00e2bc;
+    color: #fff;
+}
+a::selection {
+    background: #00e2bc;
+    color: #fff;
+}
+main {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr) [5];
+    grid-template-columns: repeat(5, 1fr);
+    -ms-grid-rows: auto;
+    grid-template-rows: auto;
+    margin-top: 5rem;
+}
+h1 {
+    font-size: 42px;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+@media (min-width: 60em) {
+    h1 {
+        font-size: 72px;
+    }
+}
+h2 {
+    font-size: 38px;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+@media (min-width: 60em) {
+    h2 {
+        font-size: 50px;
+    }
+}
+h3 {
+    font-weight: 500;
+    font-size: 30px;
+    position: relative;
+    z-index: 0;
+}
+h3::before {
+    content: '';
+    left: 0;
+    bottom: 4px;
+    background-color: #00e2bc;
+    opacity: 0.4;
+    height: 8px;
+    width: 90px;
+    display: block;
+    position: absolute;
+    z-index: -1;
+}
+p {
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 300;
+}
+a {
+    color: #d480aa;
+    text-decoration: none;
+}
+a:not([ne-button]):not(.Back):hover {
+    text-decoration: underline;
+    -webkit-text-decoration-color: #00e2bc;
+    text-decoration-color: #00e2bc;
+}
+ul {
+    padding-left: 0;
+    font-weight: 300;
+}
+li {
+    list-style-type: none;
+    padding: 4px 0 4px 32px;
+    background-image: url(images/bullet.svg);
+    background-position: 0 10px;
+    background-repeat: no-repeat;
+    background-size: 16px 10px;
+}
+[ne-button] {
+    --ne-button-font-size: 18px;
+    --ne-button-background: #d480aa;
+    --ne-button-hover-background: rgb(235, 149, 192);
+    --ne-button-outline-color: rgba(255, 22, 140, 0.3);
+    --ne-button-radius: 8px;
+    --ne-button-y-padding: 16px;
+    --ne-button-x-padding: 24px;
+    --ne-button-shadow: 0 9px 45px 0 rgba(255, 22, 140, 0.3);
+    --ne-button-active-background: rgb(235, 149, 192);
+    transition: all 0.2s ease-out;
+    line-height: 22px;
+    -webkit-appearance: initial;
+    -moz-appearance: initial;
+    appearance: initial;
+}
+[ne-button]:active,
+[ne-button]:hover {
+    transform: translateY(-2px);
+    --ne-button-outline-color: transparent;
+}
+.SecondaryButton {
+    --ne-button-background: transparent;
+    --ne-button-hover-background: transparent;
+    --ne-button-shadow: 0 9px 45px 0 rgba(0, 0, 0, 0.3);
+    --ne-button-active-background: transparent;
+}
+.Back {
+    display: inline-flex;
+    line-height: 14px;
+    color: #fff;
+    position: absolute;
+    top: 24px;
+    left: 32px;
+    z-index: 0;
+}
+.Back::before {
+    content: '';
+    width: 18px;
+    height: 14px;
+    margin-right: 16px;
+    background-image: url(images/left-arrow.svg);
+    background-size: 18px 14px;
+}
+.Back::after {
+    content: '';
+    right: 0;
+    bottom: -4px;
+    background-color: #d480aa;
+    height: 8px;
+    width: 90px;
+    display: block;
+    position: absolute;
+    z-index: -1;
+    transition: all 0.2s ease-in-out;
+}
+.Back:hover::after {
+    right: -4px;
+}
+.HeroBanner {
+    box-sizing: border-box;
+    padding: 0 24px;
+    -ms-grid-column: 1;
+    grid-column-start: 1;
+    grid-column-end: 6;
+    -ms-grid-row: 1;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+@media (min-width: 60em) {
+    .HeroBanner {
+        -ms-grid-column: 2;
+        grid-column-start: 2;
+        grid-column-end: 5;
+    }
+}
+.Logo {
+    width: 100%;
+    max-width: 100px;
+}
+.Subtitle {
+    margin-top: 0;
+    font-size: 22px;
+    line-height: 1.5;
+    text-align: center;
+    font-weight: 300;
+}
+@media (min-width: 60em) {
+    .Subtitle {
+        font-size: 30px;
+    }
+}
+.HeroActions {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+.HeroActions a {
+    display: inline-flex;
+}
+.HeroActions a + a {
+    margin-top: 16px;
+}
+@media (min-width: 30em) {
+    .HeroActions a + a {
+        margin-top: 0;
+        margin-left: 24px;
+    }
+}
+.Share {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 56px;
+}
+.Social {
+    transition: filter 0.2s ease-out;
+}
+.Social:hover {
+    filter: brightness(150%);
+}
+.Share .Social + .Social {
+    margin-left: 24px;
+}
+.Screens {
+    width: 100%;
+    margin-top: 60px;
+    -ms-grid-column: 1;
+    grid-column-start: 1;
+    grid-column-end: 6;
+    -ms-grid-row: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
+.Details {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-column: 1;
+    grid-column-start: 1;
+    grid-column-end: 6;
+    -ms-grid-row: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-template-areas: 'l' 'r';
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    -ms-grid-rows: auto;
+    grid-template-rows: auto;
+    margin-top: -50px;
+    padding: 0 24px;
+    box-sizing: border-box;
+    grid-gap: 30px;
+}
+@media (min-width: 60em) {
+    .Details {
+        -ms-grid-column: 2;
+        grid-column-start: 2;
+        grid-column-end: 5;
+        padding: 0;
+        grid-template-areas: 'l r';
+        -ms-grid-columns: 1.5fr 1fr;
+        grid-template-columns: 1.5fr 1fr;
+        grid-gap: 100px;
+        margin-top: -160px;
+        margin-bottom: 100px;
+    }
+}
+.Overview {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: l;
+    box-sizing: border-box;
+}
+.Features {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: r;
+}
+.Teams {
+    -ms-grid-column: 1;
+    grid-column-start: 1;
+    grid-column-end: 6;
+    -ms-grid-row: 4;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 0 24px;
+    box-sizing: border-box;
+}
+.Teams > h2 {
+    margin-bottom: 40px;
+}
+@media (min-width: 60em) {
+    .Teams {
+        -ms-grid-column: 2;
+        grid-column-start: 2;
+        grid-column-end: 5;
+    }
+}
+.Socials {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(60px, 1fr)) [auto-fit];
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    -ms-grid-rows: auto;
+    grid-template-rows: auto;
+    width: 100%;
+    justify-items: center;
+    grid-gap: 24px;
+    margin-top: 60px;
+    margin-bottom: 100px;
+}
