@@ -3,6 +3,7 @@ module.exports = {
     require('postcss-easy-import')({
       extensions: ['.css']
     }),
+    require('postcss-import-url')({}),
     require('postcss-preset-env')({
       stage: 0,
     }),
