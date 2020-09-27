@@ -1,0 +1,8 @@
+{% macro postItem(url, title, date) %}
+  <li>
+    <h2 style="--ne-vertical-leading: 1rem">
+      <a href="{{ url }}" rel="bookmark">{{ title }}</a>
+    </h2>
+    <time datetime="{{ date | htmlDate }}">{{ date | dateFilter }}</time>
+  </li>
+{% endmacro %}

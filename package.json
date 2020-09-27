@@ -1,0 +1,60 @@
+{
+  "name": "xity-starter",
+  "version": "1.2.0",
+  "private": true,
+  "description": "A blog-ready 11ty starter based on PostCSS and Snowpack, with a RSS feed and Native Elements.",
+  "author": "Mattia Astorino",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/equinusocio/xity-starter"
+  },
+  "scripts": {
+    "clean:dist": "rimraf ./dist",
+    "clean:eleventy": "rimraf ./.11ty",
+    "prebuild": "run-p clean:*",
+    "build": "snowpack build",
+    "predev": "run-p clean:*",
+    "dev": "snowpack dev",
+    "update:deps": "yarn upgrade-interactive --latest && yarn upgrade",
+    "update:cssdb": "npx browserslist@latest --update-db"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "0.11.0",
+    "@11ty/eleventy-plugin-rss": "1.0.9",
+    "@11ty/eleventy-plugin-syntaxhighlight": "3.0.1",
+    "@babel/core": "7.11.6",
+    "@babel/preset-env": "7.11.5",
+    "@tbranyen/jsdom": "13.0.0",
+    "cssnano": "4.1.10",
+    "cssnano-preset-advanced": "4.0.7",
+    "eleventy-plugin-pwa": "1.0.8",
+    "html-minifier": "4.0.0",
+    "markdown-it": "11.0.1",
+    "postcss-preset-env": "6.7.0",
+    "postcss-reporter": "6.0.1",
+    "slugify": "1.4.5",
+    "turbolinks": "5.2.0",
+    "what-input": "5.2.10"
+  },
+  "devDependencies": {
+    "@snowpack/plugin-optimize": "0.2.1",
+    "@snowpack/plugin-postcss": "1.0.4",
+    "@snowpack/plugin-run-script": "2.1.2",
+    "@snowpack/plugin-webpack": "2.0.12",
+    "cross-env": "7.0.2",
+    "npm-run-all": "4.1.5",
+    "postcss-cli": "7.1.2",
+    "prettier": "2.1.2",
+    "rimraf": "3.0.2",
+    "snowpack": "2.11.1",
+    "stylelint": "13.7.2",
+    "stylelint-config-standard": "20.0.0"
+  },
+  "browserslist": [
+    "last 1 Chrome versions",
+    "last 1 Firefox versions",
+    "last 1 Safari versions",
+    "last 1 Edge versions"
+  ]
+}
