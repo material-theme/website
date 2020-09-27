@@ -6,19 +6,9 @@
       "external": false
     },
     {
-      "text": "Blog",
-      "url": "/blog/",
-      "external": false
-    },
-    {
       "text": "Sample Page",
       "url": "/sample-page/",
       "external": false
-    },
-    {
-      "text": "GitHub",
-      "url": "https://github.com/equinusocio/xity-starter",
-      "external": true
     }
   ]
 }

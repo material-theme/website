@@ -70,24 +70,6 @@ module.exports = function (eleventyConfig) {
   })
 
   /**
-   * Create custom data collections
-   * for blog and feed
-   * Code from https://github.com/hankchizljaw/hylia
-   */
-  // Blog posts collection
-  const now = new Date()
-  const livePosts = (post) => post.date <= now && !post.data.draft
-  eleventyConfig.addCollection('posts', (collection) => {
-    return [
-      ...collection
-        .getFilteredByGlob(
-          `./${siteConfig.paths.src}/${siteConfig.paths.blogdir}/**/*`
-        )
-        .filter(livePosts),
-    ]
-  })
-
-  /**
    * Override BrowserSync Server options
    *
    * @link https://www.11ty.dev/docs/config/#override-browsersync-server-options
