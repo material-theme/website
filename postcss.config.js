@@ -1,8 +1,6 @@
 module.exports = {
   plugins: [
-    require('postcss-easy-import')({
-      extensions: ['.css']
-    }),
+    require('postcss-easy-import')({}),
     require('postcss-import-url')({}),
     require('postcss-preset-env')({
       stage: 0,
@@ -17,9 +15,6 @@ module.exports = {
           reduceIdents: false,
         },
       ],
-    }),
-    require('postcss-reporter')({
-      clearReportedMessages: true,
-    }),
+    })
   ]
 }

@@ -1,20 +1,13 @@
-<header>
-  {% if navigation.items %}
-    <nav>
-      {% for item in navigation.items %}
-        {% set relExternal = '' %}
-        {% set isCurrent = '' %}
+{% from "button.njk" import button %}
 
-        {% if item.external %}
-          {% set relExternal = ' rel="external" target="_blank"' %}
-        {% endif %}
-        {% if page.url == item.url %}
-          {% set isCurrent = ' aria-current="page"' %}
-        {% endif %}
-        <a href="{{ item.url }}"{{ relExternal | safe }}{{ isCurrent | safe }}>
-          <b>{{ item.text }}</b>
-        </a>
-      {% endfor %}
-    </nav>
-  {% endif %}
+<header style="--display:flex; --justify-c:space-between; --align-i:center; --margin:24px 32px 24px 8px; --margin-sm:56px 64px;">
+  {% include "logo.njk" %}
+  <div style="--display:grid; --grid-template-c: auto auto; --grid-g:16px; --grid-g-md:24px">
+    <a href="#" target="_blank" rel="noopener" style="--ne-links-foreground: var(--accent-light); --bg-hover:hsl(var(--accent)/20%); --radius:8px; --text-d:none; --font-s:1.125rem; --padding:0.5em 1em; --display:flex; --align-i:center;">
+      <svg style="--fill:hsl(var(--accent)); --margin-r:0.5em;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M12 .3C5.4.3 0 5.7 0 12.3c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.2-.7 0-.7 0-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.6.2-3.2 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.6 3.3-1.2 3.3-1.2.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.8-1.6 8.2-6.1 8.2-11.4C24 5.7 18.6.3 12 .3z"/></svg>
+      <b>Github</b>
+    </a>
+    {{ button("Support us", "#") }}
+  </div>
 </header>

@@ -6,7 +6,6 @@
   "authorHandle": "@equinusocio",
   "authorName": "Mattia Astorino",
   "paymentPointer": "$ilp.uphold.com/9ebKEYaNiGUf",
-  "syntaxTheme": "prism-material-light.css",
   "permalinkClass": ["permalink"],
   "iframeClass": ["iframes-wrapper"],
   "codeClass": ["code-wrapper"],
