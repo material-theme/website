@@ -1,7 +1,42 @@
 import { Controller } from 'stimulus'
 
 export default class extends Controller {
-  static targets = ["name", "lighter", "darker", "ocean", "palenight", "default"]
+  constructor(context) {
+    super();
+    this.context = context
+    this.variants = {
+      default: {
+        label: 'Material Theme',
+        image: 'default.png'
+      },
+      darker: {
+        label: 'Material Theme Darker',
+        image: 'darker.png'
+      },
+      ocean: {
+        label: 'Material Theme Ocean',
+        image: 'ocean.png'
+      },
+      palenight: {
+        label: 'Material Theme Palenight',
+        image: 'palenight.png'
+      },
+      lighter: {
+        label: 'Material Theme Lighter',
+        image: 'lighter.png'
+      }
+    }
+  }
+
+  static targets = [
+    "img",
+    "name",
+    "lighter",
+    "darker",
+    "ocean",
+    "palenight",
+    "default"
+  ]
 
   /* Set the current button theme as active if match the current theme */
   setPressed(element) {
@@ -14,11 +49,17 @@ export default class extends Controller {
   setTheme(trigger) {
     const root = document.documentElement;
     const variantColor = trigger.dataset.variantColor;
-    const variantName = trigger.dataset.variantName;
+    const variant = trigger.dataset.variant;
 
     root.style.setProperty('--ne-global-background', variantColor);
-    this.nameTarget.innerHTML = variantName;
+    this.nameTarget.innerHTML = this.variants[variant].label;
     this.setPressed(trigger)
+    this.setImage(trigger)
+  }
+
+  setImage(trigger) {
+    const getVariantImage = this.variants[trigger.dataset.variant].image
+    this.imgTarget.src = `/images/${getVariantImage}`
   }
 
   /* Init theme switcher actions */

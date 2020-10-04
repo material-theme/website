@@ -1,8 +1,8 @@
 import 'what-input'
 import { Application } from 'stimulus'
 
-/* Import controllers */
-import Preview from './controllers/preview'
+/* Import components */
+import Preview from './components/preview'
 
 /* Init Stimulus library */
 const application = Application.start()

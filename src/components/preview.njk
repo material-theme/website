@@ -1,15 +1,17 @@
 {% from "container.njk" import Container %}
 
 {% call Container("0") -%}
-  <div style="--display:flex; --justify-c:flex-end; --align-i:center; --margin-t:100px;" data-controller="preview">
-    <span data-target="preview.name">Material Theme</span>
-    <div style="--ne-button-background:none; --ne-button-shadow:none; --ne-button-x-padding:0; --ne-button-y-padding:0; --ne-button-hover-background:none; --ne-button-active-background:none">
-      <button style="--radius:100%; --width:24px; --height:24px;" aria-pressed="true" data-target="preview.default" data-variant-color="var(--default)" data-variant-name="Material Theme">A</button>
-      <button style="--radius:100%; --width:24px; --height:24px;" aria-pressed="false" data-target="preview.darker" data-variant-color="var(--darker)" data-variant-name="Material Theme Darker">B</button>
-      <button style="--radius:100%; --width:24px; --height:24px;" aria-pressed="false" data-target="preview.lighter" data-variant-color="var(--lighter)" data-variant-name="Material Theme Lighter">C</button>
-      <button style="--radius:100%; --width:24px; --height:24px;" aria-pressed="false" data-target="preview.ocean" data-variant-color="var(--ocean)" data-variant-name="Material Theme Ocean">D</button>
-      <button style="--radius:100%; --width:24px; --height:24px;" aria-pressed="false" data-target="preview.palenight" data-variant-color="var(--palenight)" data-variant-name="Material Theme Palenight">E</button>
+  <div data-controller="preview">
+    <div style="--display:flex; --justify-c:flex-end; --align-i:center; --margin-t:100px;">
+      <span data-target="preview.name">Material Theme</span>
+      <div style="--ne-button-background:none; --ne-button-shadow:none; --ne-button-x-padding:0; --ne-button-y-padding:0; --ne-button-hover-background:none; --ne-button-active-background:none">
+        <button style="--radius:100%; --width:24px; --height:24px;" aria-pressed="true" data-target="preview.default" data-variant-color="var(--default)" data-variant="default">A</button>
+        <button style="--radius:100%; --width:24px; --height:24px;" aria-pressed="false" data-target="preview.darker" data-variant-color="var(--darker)" data-variant="darker">B</button>
+        <button style="--radius:100%; --width:24px; --height:24px;" aria-pressed="false" data-target="preview.lighter" data-variant-color="var(--lighter)" data-variant="lighter">C</button>
+        <button style="--radius:100%; --width:24px; --height:24px;" aria-pressed="false" data-target="preview.ocean" data-variant-color="var(--ocean)" data-variant="ocean">D</button>
+        <button style="--radius:100%; --width:24px; --height:24px;" aria-pressed="false" data-target="preview.palenight" data-variant-color="var(--palenight)" data-variant="palenight">E</button>
+      </div>
     </div>
+    <img loading="lazy" data-target="preview.img" style="--width:100%; --max-w:100%; --height:100%;" src="/images/default.png" width="1000" height="700" />
   </div>
-  <img style="--width:100%; --max-w:100%; --height:100%;" src="/images/ocean.png" width="1000" height="700" />
 {%- endcall %}
