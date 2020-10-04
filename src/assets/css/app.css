@@ -2,6 +2,10 @@
 @import './utilities.css';
 @import 'https://cdn.jsdelivr.net/npm/@native-elements/core@1/native-elements.css';
 
+html {
+  transition: background-color 200ms;
+}
+
 body {
   margin: 0;
 }
@@ -18,4 +22,14 @@ body {
   right: 20px;
   border-radius: 5px;
   background-color: hsl(var(--accent));
+}
+
+[data-is-custom],
+[data-is-custom]:hover,
+[data-is-custom]:active {
+  --ne-button-icon-size: 64px;
+  --ne-button-icon-margin: 0;
+
+  all: unset;
+  color: slategray;
 }

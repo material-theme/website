@@ -8,13 +8,14 @@
   --orange: #F78C6C;
   --violet: #C792EA;
   --blue: #82AAFF;
-  --ocean: 228deg 26% 8%;
+  --default: #263238;
+  --ocean: #0F111A;
   --palenight: #292D3E;
   --darker: #212121;
   --lighter: #484848;
 
   /* Native Elements theme */
-  --ne-global-background: hsl(var(--ocean));
+  --ne-global-background: var(--default);
   --ne-global-foreground: hsl(var(--accent-light));
   --ne-body-font-family: 'Roboto', sans-serif;
   --ne-root-font-size: 100%;

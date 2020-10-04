@@ -38,7 +38,7 @@
     "postcss-import-url": "5.1.0",
     "postcss-preset-env": "6.7.0",
     "slugify": "1.4.5",
-    "turbolinks": "5.2.0",
+    "stimulus": "1.1.1",
     "what-input": "5.2.10"
   },
   "devDependencies": {

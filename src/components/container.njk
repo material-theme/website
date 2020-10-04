@@ -1,5 +1,5 @@
-{% macro Container() %}
-  <div style="--max-w:1104px; --margin:0 auto; --padding:0 24px;">
+{% macro Container(padding="24px") %}
+  <div style="--max-w:1104px; --margin:0 auto; --padding:0 {{padding}};">
     {{ caller() }}
   </div>
 {% endmacro %}

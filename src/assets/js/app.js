@@ -1,5 +1,14 @@
 import 'what-input'
-import Turbolinks from 'turbolinks'
+import { Application } from 'stimulus'
 
-Turbolinks.start()
+/* Import controllers */
+import Preview from './controllers/preview'
+
+/* Init Stimulus library */
+const application = Application.start()
+
+/* Register Stimulus controllers */
+application.register('preview', Preview)
+
+
 
