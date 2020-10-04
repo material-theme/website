@@ -1,8 +1,8 @@
 {% extends 'layouts/base.njk' %}
 
 {% block content %}
-  <main tabindex="-1" class="Bg">
-    <div style="--position:absolute; --inset:0 0 auto 0; --position:absolute; --z-index:-1; --background-i:url('/images/bg.png'); --background-s:cover; --background-p:right bottom; --background-r:no-repeat; --blend:color-dodge;"></div>
+  <main tabindex="-1">
+    <div style="--position:absolute; --height:clamp(600px, 800px, 90vh); --inset:0; --z:-1; --bg-i:url('/images/bg.png'); --bg-s:cover; --bg-p:right bottom; --bg-r:no-repeat; --blend:color-dodge;"></div>
     {% include "header.njk" %}
     {{ content | safe }}
   </main>
