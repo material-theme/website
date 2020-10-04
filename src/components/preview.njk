@@ -1,7 +1,7 @@
 {% from "container.njk" import Container %}
 
-{% call Container("0") -%}
-  <div data-controller="preview">
+<div data-controller="preview" style="--overflow:hidden;">
+  {% call Container("0") -%}
     <div style="--display:flex; --justify-c:flex-end; --align-i:center; --margin-t:100px;">
       <span data-target="preview.name">Material Theme</span>
       <div style="--ne-button-background:none; --ne-button-shadow:none; --ne-button-x-padding:0; --ne-button-y-padding:0; --ne-button-hover-background:none; --ne-button-active-background:none">
@@ -12,6 +12,6 @@
         <button style="--radius:100%; --width:24px; --height:24px;" aria-pressed="false" data-target="preview.palenight" data-variant-color="var(--palenight)" data-variant="palenight">E</button>
       </div>
     </div>
-    <img loading="lazy" data-target="preview.img" style="--width:100%; --max-w:100%; --height:100%;" src="/images/default.png" width="1000" height="700" />
-  </div>
-{%- endcall %}
+  <img loading="lazy" data-target="preview.img" style="--width:100%; --max-w:100%; --height:100%;" src="/images/default.png" width="1000" height="700" />
+  {%- endcall %}
+</div>
