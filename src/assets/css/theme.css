@@ -18,7 +18,7 @@
   --ne-global-foreground: hsl(var(--accent-light));
   --ne-body-font-family: 'Roboto', sans-serif;
   --ne-root-font-size: 100%;
-  --ne-body-font-size: clamp(0.8rem, 2vw, 1.5rem);
+  --ne-body-font-size: clamp(0.9rem, 2vw, 1.5rem);
   --ne-vertical-leading: 1.2em;
   --ne-selection-foreground: hsl(229, 27%, 8%);
   --ne-global-box-sizing: border-box;
