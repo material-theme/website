@@ -1,5 +1,15 @@
 ---
 layout: home
+title: Original colors, original taste.
 ---
+{% from "container.njk" import Container %}
 
-Ciao
+
+{% call Container() -%}
+  <section>
+    {% if title %}
+      <h1 style="--ne-vertical-leading:16px; --text-a:center;">{{ title }}</h1>
+    {% endif %}
+    <p style="--text-a:center;">Available for <span style="--color:var(--green)">VS Code</span> — <span style="--color:var(--pink)">JetBrains</span> — <span style="--color:var(--sky)">Nova</span> — <span style="--color:var(--orange)">iTerm</span> — <span style="--color:var(--violet)">Bear Notes</span> and <a href="https://github.com/material-theme/vsc-material-theme#official-portings" target="_blank" rel="noopener noreferrer">many others</a>!</p>
+  </section>
+{%- endcall %}

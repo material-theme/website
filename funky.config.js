@@ -8,5 +8,9 @@ module.exports = {
   },
   utilities: {
     ...utilities,
+    'blend': {
+      type: "responsive",
+      property: 'mix-blend-mode'
+    }
   },
 };

@@ -1,4 +1,4 @@
-{% macro button(children, href, target = "_blank", rel="noopener noreferrer") %}
+{% macro Button(children, href, target = "_blank", rel="noopener noreferrer") %}
   {% if href %}
     <a href="{{ href }}" target="{{ target }}" rel="{{ rel }}" ne-button type="button">
       <b>{{ children | safe }}</b>

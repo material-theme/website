@@ -1,11 +1,9 @@
 {% extends 'layouts/base.njk' %}
 
 {% block content %}
-  <main tabindex="-1">
+  <main tabindex="-1" class="Bg">
+    <div style="--position:absolute; --inset:0 0 auto 0; --position:absolute; --z-index:-1; --background-i:url('/images/bg.png'); --background-s:cover; --background-p:right bottom; --background-r:no-repeat; --blend:color-dodge;"></div>
     {% include "header.njk" %}
-    {% if title %}
-      <h1>{{ title }}</h1>
-    {% endif %}
     {{ content | safe }}
   </main>
 {% endblock %}

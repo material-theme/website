@@ -1,13 +1,10 @@
 @import './theme.css';
 @import './utilities.css';
-@import './typography.css';
 @import 'https://cdn.jsdelivr.net/npm/@native-elements/core@1/native-elements.css';
 
-a[aria-current='page'],
-a[aria-current='page']:hover {
-  color: var(--ne-global-foreground);
+body {
+  margin: 0;
 }
-
 
 [data-whatintent='mouse'] a:focus,
 [data-whatintent='mouse'] a:visited:focus {
@@ -20,5 +17,5 @@ a[aria-current='page']:hover {
   left: 4px;
   right: 20px;
   border-radius: 5px;
-  background-color: var(--accent-color, #34F);
+  background-color: hsl(var(--accent));
 }
