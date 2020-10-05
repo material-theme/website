@@ -1,32 +1,41 @@
+const IS_PROD = process.env.NODE_ENV === 'production';
+
+const pluginsBase = [
+  '@snowpack/plugin-postcss',
+  [
+    '@snowpack/plugin-run-script',
+    {
+      cmd: 'eleventy',
+      watch: '$1 --watch',
+    },
+  ],
+];
+
+const pluginsPROD = [
+  ['@snowpack/plugin-babel'],
+  ['@snowpack/plugin-webpack'],
+  [
+    '@snowpack/plugin-optimize',
+    {
+      minify: true,
+    },
+  ],
+];
+
+const plugins = IS_PROD ? [
+  ...pluginsBase,
+  ...pluginsPROD,
+] : [
+  ...pluginsBase,
+];
+
 module.exports = {
   mount: {
     '.11ty': '/',
     'src/assets/js': '/assets/js',
     'src/assets/css': '/assets/css',
   },
-  plugins: [
-    '@snowpack/plugin-postcss',
-    [
-      '@snowpack/plugin-run-script',
-      {
-        cmd: 'eleventy',
-        watch: '$1 --watch',
-      },
-    ],
-    /**
-     * Enable this plugin if you want to disable modules and
-     * use the classic js bundle. This is useful to target
-     * old  browsers
-     */
-    ['@snowpack/plugin-babel'],
-    ['@snowpack/plugin-webpack'],
-    [
-      '@snowpack/plugin-optimize',
-      {
-        minify: true,
-      },
-    ],
-  ],
+  plugins,
   buildOptions: {
     clean: true,
   },
