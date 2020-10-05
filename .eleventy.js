@@ -1,18 +1,18 @@
-const syntaxHighlightPlugin = require('@11ty/eleventy-plugin-syntaxhighlight')
-const htmlMinTransform = require('./utils/transforms/htmlmin.js')
-const contentParser = require('./utils/transforms/contentParser.js')
-const htmlDate = require('./utils/filters/htmlDate.js')
-const rssPlugin = require('@11ty/eleventy-plugin-rss')
-const pwaPlugin = require('eleventy-plugin-pwa')
-const date = require('./utils/filters/date.js')
-const fs = require('fs')
+const syntaxHighlightPlugin = require('@11ty/eleventy-plugin-syntaxhighlight');
+const rssPlugin = require('@11ty/eleventy-plugin-rss');
+const pwaPlugin = require('eleventy-plugin-pwa');
+const fs = require('fs');
+const htmlMinTransform = require('./utils/transforms/htmlmin.js');
+const contentParser = require('./utils/transforms/contentParser.js');
+const htmlDate = require('./utils/filters/htmlDate.js');
+const date = require('./utils/filters/date.js');
 
 /**
  * Import site configuration
  */
-const siteConfig = require('./src/_data/config.json')
+const siteConfig = require('./src/_data/config.json');
 
-module.exports = function (eleventyConfig) {
+module.exports = (eleventyConfig) => {
   /**
    * Add custom watch targets
    *
@@ -27,10 +27,10 @@ module.exports = function (eleventyConfig) {
    */
   eleventyConfig.addPassthroughCopy({
     './static': '.',
-  })
+  });
   eleventyConfig.addPassthroughCopy(
-    `./src/assets/css/${siteConfig.syntaxTheme}`
-  )
+    `./src/assets/css/${siteConfig.syntaxTheme}`,
+  );
   // eleventyConfig.addPassthroughCopy({
   //   bundle: 'assets',
   // })
@@ -41,9 +41,9 @@ module.exports = function (eleventyConfig) {
    * @link https://www.11ty.io/docs/filters/
    */
   // human friendly date format
-  eleventyConfig.addFilter('dateFilter', date)
+  eleventyConfig.addFilter('dateFilter', date);
   // robot friendly date format for crawlers
-  eleventyConfig.addFilter('htmlDate', htmlDate)
+  eleventyConfig.addFilter('htmlDate', htmlDate);
 
   /**
    * Add Transforms
@@ -52,10 +52,10 @@ module.exports = function (eleventyConfig) {
    */
   if (process.env.ELEVENTY_ENV === 'production') {
     // Minify HTML when building for production
-    eleventyConfig.addTransform('htmlmin', htmlMinTransform)
+    eleventyConfig.addTransform('htmlmin', htmlMinTransform);
   }
   // Parse the page HTML content and perform some manipulation
-  eleventyConfig.addTransform('contentParser', contentParser)
+  eleventyConfig.addTransform('contentParser', contentParser);
 
   /**
    * Add Plugins
@@ -63,11 +63,11 @@ module.exports = function (eleventyConfig) {
    * @link https://github.com/11ty/eleventy-plugin-syntaxhighlight
    * @link https://github.com/okitavera/eleventy-plugin-pwa
    */
-  eleventyConfig.addPlugin(rssPlugin)
-  eleventyConfig.addPlugin(syntaxHighlightPlugin)
+  eleventyConfig.addPlugin(rssPlugin);
+  eleventyConfig.addPlugin(syntaxHighlightPlugin);
   eleventyConfig.addPlugin(pwaPlugin, {
     globPatterns: ['**/*.{png,ico,json,woff,woff2,jpg,jpeg,webp,html,js,css}'],
-  })
+  });
 
   /**
    * Override BrowserSync Server options
@@ -80,33 +80,33 @@ module.exports = function (eleventyConfig) {
     snippetOptions: {
       rule: {
         match: /<\/head>/i,
-        fn: function (snippet, match) {
-          return snippet + match
+        fn(snippet, match) {
+          return `${snippet}${match}`;
         },
       },
     },
     // Set local server 404 fallback
     callbacks: {
-      ready: function (err, browserSync) {
-        const content_404 = fs.readFileSync('dist/404.html')
+      ready(err, browserSync) {
+        const content404 = fs.readFileSync('dist/404.html');
 
         browserSync.addMiddleware('*', (req, res) => {
           // Provides the 404 content without redirect.
           res.writeHead(404, {
             'Content-Type': 'text/html',
-          })
-          res.write(content_404)
-          res.end()
-        })
+          });
+          res.write(content404);
+          res.end();
+        });
       },
     },
-  })
+  });
 
   /*
    * Disable use gitignore for avoiding ignoring of /bundle folder during watch
    * https://www.11ty.dev/docs/ignores/#opt-out-of-using-.gitignore
    */
-  eleventyConfig.setUseGitIgnore(false)
+  eleventyConfig.setUseGitIgnore(false);
 
   /**
    * Eleventy configuration object
@@ -122,5 +122,5 @@ module.exports = function (eleventyConfig) {
     templateFormats: ['njk', 'md'],
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
-  }
-}
+  };
+};

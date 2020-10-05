@@ -37,4 +37,4 @@ module.exports = {
     open: 'none',
     hmr: true,
   },
-}
+};

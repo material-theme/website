@@ -1,5 +1,5 @@
-module.exports = function(value) {
-  const dateObject = new Date(value)
+module.exports = (value) => {
+  const dateObject = new Date(value);
 
-  return dateObject.toISOString()
-}
+  return dateObject.toISOString();
+};
