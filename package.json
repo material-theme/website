@@ -13,7 +13,7 @@
     "clean:dist": "rimraf ./dist",
     "clean:eleventy": "rimraf ./.11ty",
     "prebuild": "run-p clean:*",
-    "build": "snowpack build",
+    "build": "NODE_ENV=production snowpack build",
     "predev": "run-p clean:*",
     "dev": "snowpack dev --reload",
     "funky": "funky",
