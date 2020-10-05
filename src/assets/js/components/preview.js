@@ -62,7 +62,7 @@ export default class extends Controller {
     this.imgTarget.src = `/images/${getVariantImage}`;
   }
 
-  /* Init theme switcher actions */
+  /* Init preview switcher actions */
   connect() {
     const lighterButton = this.lighterTarget;
     const darkerButton = this.darkerTarget;
