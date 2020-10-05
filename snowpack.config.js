@@ -18,7 +18,8 @@ module.exports = {
      * use the classic js bundle. This is useful to target
      * old  browsers
      */
-    // ['@snowpack/plugin-webpack'],
+    ['@snowpack/plugin-babel'],
+    ['@snowpack/plugin-webpack'],
     [
       '@snowpack/plugin-optimize',
       {

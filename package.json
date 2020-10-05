@@ -42,6 +42,8 @@
     "what-input": "5.2.10"
   },
   "devDependencies": {
+    "@babel/plugin-syntax-class-properties": "7.10.4",
+    "@snowpack/plugin-babel": "2.1.2",
     "@snowpack/plugin-optimize": "0.2.2",
     "@snowpack/plugin-postcss": "1.0.4",
     "@snowpack/plugin-run-script": "2.1.3",
