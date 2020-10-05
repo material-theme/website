@@ -1,4 +1,4 @@
-const {breakpoints, utilities} = require('@native-elements/funky/config.js');
+const { breakpoints, utilities } = require('@native-elements/funky/config.js');
 
 module.exports = {
   minify: true,
@@ -8,9 +8,9 @@ module.exports = {
   },
   utilities: {
     ...utilities,
-    'blend': {
-      type: "responsive",
-      property: 'mix-blend-mode'
-    }
+    blend: {
+      type: 'responsive',
+      property: 'mix-blend-mode',
+    },
   },
 };

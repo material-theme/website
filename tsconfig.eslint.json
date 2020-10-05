@@ -1,0 +1,8 @@
+{
+  "include": ["**/**.js"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    ".11ty"
+  ]
+}

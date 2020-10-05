@@ -1,3 +1,5 @@
+/* eslint-disable global-require */
+
 module.exports = {
   plugins: [
     require('postcss-easy-import')({}),
@@ -15,6 +17,6 @@ module.exports = {
           reduceIdents: false,
         },
       ],
-    })
-  ]
-}
+    }),
+  ],
+};
