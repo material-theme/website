@@ -54,8 +54,16 @@ export default class extends Controller {
     const root = document.documentElement;
     const { variantColor } = trigger.dataset;
     const { variant } = trigger.dataset;
+    const terminal = this.scope.element.querySelector('[data-terminal]');
 
     root.style.setProperty('--ne-global-background', variantColor);
+    if (variant === 'lighter') {
+      terminal.style.setProperty('--color', '#000');
+      terminal.style.setProperty('--bg-c', '#fff');
+    } else {
+      terminal.style.removeProperty('--color');
+      terminal.style.setProperty('--bg-c', 'var(--ne-global-background)');
+    }
     this.nameTarget.innerHTML = this.variants[variant].label;
     this.setPressed(trigger);
     this.setImage(trigger);
