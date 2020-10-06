@@ -20,7 +20,7 @@
   --ne-global-foreground: hsl(var(--accent-light));
   --ne-body-font-family: 'Roboto', sans-serif;
   --ne-root-font-size: 100%;
-  --ne-body-font-size: clamp(0.9rem, 2vw, 1.5rem);
+  --ne-body-font-size: clamp(1rem, 2vw, 1.5rem);
   --ne-vertical-leading: 1.2em;
   --ne-selection-foreground: hsl(229, 27%, 8%);
   --ne-global-box-sizing: border-box;
@@ -28,7 +28,7 @@
   --ne-outline-width: 2px;
   --ne-outline-color: hsl(var(--accent));
   --ne-basic-line-height: 1.5;
-  --ne-headings-scale: 1.27;
+  --ne-headings-scale: 1.25;
   --ne-quote-font-size: 2rem;
   --ne-cite-foreground: hsl(var(--accent));
   --ne-cite-font-size: 1rem;
