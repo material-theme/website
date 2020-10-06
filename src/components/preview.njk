@@ -4,7 +4,7 @@
   {% call Container("0") -%}
   <div style="--position:relative;">
     <img src="/images/grid.svg" style="--position:absolute; --z:-1; --right:calc(50% + 175px);" />
-    <div role="radiogroup" aria-labelledby="variant-name" style="--display:flex; --justify-c:flex-end; --align-i:center; --margin-t:100px; --padding-r:24px; --padding-r-sm:40px;">
+    <div role="radiogroup" aria-labelledby="variant-name" style="--display:flex; --justify-c:flex-end; --align-i:center; --margin-t:40px; --margin-t-sm:100px; --padding-r:24px; --padding-r-sm:40px;">
       <span id="variant-name" data-target="preview.name" style="--font-s:1rem; --margin-r:16px; --opacity:0.6; --text-a:right;">Material Theme</span>
       <div style="--display:inline-grid; --grid-template-c:repeat(5,1fr); --grid-g:16px; --ne-button-background:none; --ne-button-shadow:none; --ne-button-x-padding:0; --ne-button-y-padding:0; --ne-button-hover-background:none; --ne-button-active-background:none">
         <button role="radio" aria-checked="true" style="--border:3px solid hsl(var(--accent)); --border-hover:3px solid hsl(var(--accent)); --display:inline-flex; --radius:100%; --width:24px; --height:24px; --bg-c:var(--default); --bg-c-hover:var(--default)" aria-pressed="true" data-target="preview.default" data-variant-color="var(--default)" data-variant="default"></button>
@@ -17,7 +17,7 @@
     <div style="--position:absolute; --display:none; --display-sm:block; --top:50%; --right-sm:24px; --right-lg:0; --width:clamp(50vw, 100%, 520px); --max-w:520px;">
       {% include "terminal.njk" %}
     </div>
-    <img src="/images/grid.svg" style="--position:absolute; --z:-1; --bottom:0; --left:calc(50% - 175px); --transform:rotate(90deg)" />
+    <img src="/images/grid.svg" style="--filter:hue-rotate(100deg); --position:absolute; --z:-1; --bottom:-100px; --bottom-sm:0; --left:calc(50% - 175px); --transform:rotate(90deg)" />
     <img loading="lazy" data-target="preview.img" style="--width:100%; --max-w:100%; --height:100%;" src="/images/default.png" width="1100" height="750" />
   </div>
   {%- endcall %}
