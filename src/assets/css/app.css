@@ -32,3 +32,16 @@ body {
 
   all: unset;
 }
+
+.Avatar {
+  object-fit: cover;
+  object-position: center;
+  border-radius: 100%;
+  overflow: hidden;
+  transform: translateZ(0);
+
+  & + * {
+    margin-left: -16px;
+    box-shadow: 0 0 0 6px var(--ne-global-background);
+  }
+}
