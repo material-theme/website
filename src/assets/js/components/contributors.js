@@ -8,7 +8,7 @@ export default class extends Controller {
   ]
 
   async connect() {
-    const { info, members } = await (await fetch('/collective')).json();
+    const { info, members } = await (await fetch('/api/collective')).json();
     this.countTarget.textContent = info.contributorsCount;
     this.avatarsTarget.querySelectorAll('img').forEach((img, index) => {
       // eslint-disable-next-line no-param-reassign
