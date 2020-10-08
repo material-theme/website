@@ -1,0 +1,8 @@
+{% from "container.njk" import Container %}
+
+<footer style="--position:relative; --padding-t:200px;">
+  <div style="--position:absolute; --transform:skewY(-3deg) translateZ(0); --top:0; --left:0; --right:0; --bottom:-200px; --bg-c:hsl(100deg 0% 0% / 20%);"></div>
+  {% call Container() -%}
+    FOOTER
+  {%- endcall %}
+</footer>
