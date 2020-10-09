@@ -33,6 +33,7 @@
     "cssnano-preset-advanced": "4.0.7",
     "eleventy-plugin-pwa": "1.0.8",
     "html-minifier": "4.0.0",
+    "isomorphic-fetch": "3.0.0",
     "markdown-it": "11.0.1",
     "postcss-easy-import": "3.0.0",
     "postcss-import": "12.0.1",
