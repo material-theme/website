@@ -12,7 +12,7 @@ export default async (req, res) => {
     ...backers,
     ...silvers,
     ...golds,
-  ].slice(-8);
+  ].slice(-8).reverse();
 
   res.json({
     info,
