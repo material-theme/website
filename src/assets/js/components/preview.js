@@ -41,10 +41,10 @@ export default class extends Controller {
   /* Set the current button theme as active if match the current theme */
   setPressed(element) {
     const selecedStyle = '3px solid hsl(var(--accent))';
-    const currentPressed = this.scope.element.querySelector('[aria-checked="true"]');
+    const currentPressed = this.scope.element.querySelector('[aria-pressed="true"]');
     currentPressed.style.removeProperty('--border');
-    currentPressed.setAttribute('aria-checked', false);
-    element.setAttribute('aria-checked', true);
+    currentPressed.setAttribute('aria-pressed', false);
+    element.setAttribute('aria-pressed', true);
     element.style.setProperty('--border', selecedStyle);
     element.style.setProperty('--border-hover', selecedStyle);
   }
