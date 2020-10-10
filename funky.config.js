@@ -12,5 +12,9 @@ module.exports = {
       type: 'responsive',
       property: 'mix-blend-mode',
     },
+    'clip-p': {
+      type: 'standard',
+      property: 'clip-path',
+    },
   },
 };

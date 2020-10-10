@@ -1,8 +1,21 @@
 {% from "container.njk" import Container %}
 
-<footer style="--position:relative; --padding-t:200px;">
-  <div style="--position:absolute; --transform:skewY(-3deg) translateZ(0); --top:0; --left:0; --right:0; --bottom:-200px; --bg-c:hsl(100deg 0% 0% / 20%);"></div>
+<footer style="--position:relative; --padding:calc( (var(--skew-padding) * 2) - (var(--skew-padding) - var(--skew-padding)) + 48px) 0 0;">
+  <div style="--z:-1; --pointer-e:none; --position:absolute; --clip-p:polygon(0% calc(var(--skew-padding) * 2), 100% 0%, 100% 100%, 0% 100%); --bottom:0; --top:0; --left:0; --right:0; --bottom:-200px; --bg-c:hsl(100deg 0% 0% / 20%);"></div>
   {% call Container() -%}
-    FOOTER
+    <div style="--padding-sm: 0 32px;">
+      <h2 style="--text-a:center; --margin-b-sm:56px;">Big teams <span style="--color:var(--purple)">love</span> Material Theme</h2>
+      <ul style="--list-s:none; --padding:0; --margin:0; --display:grid; --grid-template-c:repeat(auto-fit, minmax(48px, auto)); --grid-g:24px; --grid-g-sm:56px; --justify-c:center;">
+        <li><img src="/images/logos/facebook.svg" alt="Facebook" width="48" height="48" /></li>
+        <li><img src="/images/logos/mailup.svg" alt="Mailup" width="128" height="48" /></li>
+        <li><img src="/images/logos/salesforce.svg" alt="Salesforce" width="67" height="48" /></li>
+        <li><img src="/images/logos/oval.svg" alt="Oval" width="124" height="48" /></li>
+        <li><img src="/images/logos/firefox.svg" alt="Firefox" width="48" height="48" /></li>
+        <li><img src="/images/logos/slack.svg" alt="Slack" width="48" height="48" /></li>
+        <li><img src="/images/logos/microsoft.svg" alt="Microsoft" width="48" height="48" /></li>
+        <li><img src="/images/logos/twitter.svg" alt="Twitter" width="48" height="48" /></li>
+        <li><img src="/images/logos/github.svg" alt="Github" width="48" height="48" /></li>
+      </ul>
+    </div>
   {%- endcall %}
 </footer>
