@@ -12,7 +12,7 @@ export default async (req, res) => {
     ...silvers,
     ...backers,
     ...donations,
-  ].slice(-8);
+  ].slice(0, 8);
 
   res.json({
     info,
