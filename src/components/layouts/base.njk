@@ -17,14 +17,5 @@
   </head>
   <body>
     {% block content %}{% endblock %}
-    <script>
-      {% if not env.IS_DEV %}
-        if ('serviceWorker' in navigator) {
-          window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/service-worker.js');
-          });
-        }
-      {% endif %}
-    </script>
   </body>
 </html>
