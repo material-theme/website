@@ -9,7 +9,7 @@ export default async (req, res) => {
 
   const oneOf = {
     bonusfinder: {
-      label: 'Bonusfinder',
+      label: 'bonusfinder',
       found: false,
     },
   };
@@ -21,7 +21,7 @@ export default async (req, res) => {
     ...donations,
   ]
     .filter((member) => {
-      const isBonusFinder = member.name.includes(oneOf.bonusfinder);
+      const isBonusFinder = member.name.toLowerCase().includes(oneOf.bonusfinder.label);
       if (isBonusFinder && oneOf.bonusfinder.found) {
         return false;
       }
