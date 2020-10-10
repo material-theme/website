@@ -8,11 +8,11 @@ export default async (req, res) => {
   const donations = await (await fetch('https://opencollective.com/material-theme/tiers/donation/all.json')).json();
 
   const members = [
-    ...donations,
-    ...backers,
-    ...silvers,
     ...golds,
-  ].slice(-8).reverse();
+    ...silvers,
+    ...backers,
+    ...donations,
+  ].slice(-8);
 
   res.json({
     info,
