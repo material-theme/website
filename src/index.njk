@@ -18,7 +18,32 @@ title: Original colors, original taste.
       — <a href="https://github.com/r3volution11/material-theme-bear-notes" rel="noopener" target="_blank" style="--ne-links-foreground:var(--violet); --text-d:none;">Bear Notes</a>
       and <a href="https://github.com/material-theme/vsc-material-theme#official-portings" target="_blank" rel="noopener noreferrer">many others</a>!</p>
   {%- endcall %}
-  <div>
-    {% include "preview.njk" %}
-  </div>
+  {% include "preview.njk" %}
+  {% call Container() -%}
+    <div style="--display:grid; --grid-template-c-md: 65% 35%; padding-t:64px; --padding-l-sm: 32px; --margin-t: 32px;--margin-t-md:-50px;">
+      <div style="--padding-r-sm: 14ch; --margin-r-sm:80px;">
+        <p>
+          With Material Theme your dev experience will get a boost and your eyes will be always grateful to you.
+        </p>
+        <p>
+          Born originally for Sublime Text, it is now one of the most used dark themes, with many people working on it to bring this DX to other tools.
+        </p>
+      </div>
+      <div style="--margin-t:40px; --margin-t-md:120px;">
+        <h2 style="--color:hsl(var(--accent)); --margin-b:24px">Features</h2>
+        <ul style="--list-s:none; --margin:0; --padding:0;">
+          <li style="--margin-b:8px;"><span style="--color:var(--purple)">—</span> Curated color palette.</li>
+          <li style="--margin-b:8px;"><span style="--color:var(--purple)">—</span> Five theme variants.</li>
+          <li style="--margin-b:8px;"><span style="--color:var(--purple)">—</span> File & folders icons.</li>
+          <li style="--margin-b:8px;"><span style="--color:var(--purple)">—</span> Distractions free.</li>
+          <li style="--margin-b:8px;"><span style="--color:var(--purple)">—</span> Available for many tools.</li>
+          <li style="--margin-b:8px;"><span style="--color:var(--purple)">—</span> Constant updates.</li>
+        </ul>
+      </div>
+    </div>
+    <div style="--margin-t:56px;">
+      {% include "contributors.njk" %}
+    </div>
+  {%- endcall %}
+  {% include "footer.njk" %}
 </section>

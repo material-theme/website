@@ -1,6 +1,5 @@
 const syntaxHighlightPlugin = require('@11ty/eleventy-plugin-syntaxhighlight');
 const rssPlugin = require('@11ty/eleventy-plugin-rss');
-const pwaPlugin = require('eleventy-plugin-pwa');
 const fs = require('fs');
 const htmlMinTransform = require('./utils/transforms/htmlmin.js');
 const contentParser = require('./utils/transforms/contentParser.js');
@@ -61,13 +60,9 @@ module.exports = (eleventyConfig) => {
    * Add Plugins
    * @link https://github.com/11ty/eleventy-plugin-rss
    * @link https://github.com/11ty/eleventy-plugin-syntaxhighlight
-   * @link https://github.com/okitavera/eleventy-plugin-pwa
    */
   eleventyConfig.addPlugin(rssPlugin);
   eleventyConfig.addPlugin(syntaxHighlightPlugin);
-  eleventyConfig.addPlugin(pwaPlugin, {
-    globPatterns: ['**/*.{png,ico,json,woff,woff2,jpg,jpeg,webp,html,js,css}'],
-  });
 
   /**
    * Override BrowserSync Server options

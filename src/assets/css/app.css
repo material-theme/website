@@ -3,6 +3,10 @@
 @import 'https://cdn.jsdelivr.net/npm/@native-elements/core@1/native-elements.css';
 
 html {
+  --magic-number: 0.07027041735; /* tan(11°)/2 */
+  --full-width: 100vw;
+  --skew-padding: calc(var(--full-width) * var(--magic-number));
+
   transition: background-color 200ms;
 }
 
@@ -31,4 +35,10 @@ body {
   --ne-button-icon-margin: 0;
 
   all: unset;
+}
+
+.Avatars {
+  & * + * {
+    margin-left: -24px;
+  }
 }
