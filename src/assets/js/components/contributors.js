@@ -9,7 +9,7 @@ export default class extends Controller {
 
   async connect() {
     const { info, members } = await (await fetch('/api/collective')).json();
-    this.countTarget.textContent = info.contributorsCount;
+    this.countTarget.textContent = info.backersCount;
     members.forEach((member) => {
       const imgEL = document.createElement('img');
       imgEL.setAttribute('style', '--padding:4px; --obj-f:cover; --obj-p:center; --radius:100%; --overflow:hidden; --bg-c:var(--ne-global-background);');
